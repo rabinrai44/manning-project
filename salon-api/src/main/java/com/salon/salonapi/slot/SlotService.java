@@ -1,4 +1,4 @@
-package slot;
+package com.salon.salonapi.slot;
 
 import java.util.List;
 

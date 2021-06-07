@@ -1,4 +1,4 @@
-package com.salon.salonapi.configurations;
+package com.salon.salonapi.config;
 
 
 import org.springframework.context.annotation.Bean;
