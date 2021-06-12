@@ -2,6 +2,7 @@ import { Component, Fragment } from "react";
 import { API_URL } from "../common/configuration";
 import { loadingIndicator } from "../common/loader/loading-indicator";
 import { appNotification } from "../common/notification/app-notification";
+import { Link } from "react-router-dom";
 class ChooseService extends Component {
   constructor(props) {
     super(props);
@@ -89,13 +90,13 @@ class ChooseService extends Component {
                     <li>{item.description}</li>
                     <li>{item.itemInMinutes} Minutes</li>
                   </ul>
-                  <button
-                    type="button"
+                  <Link
+                    to={`/chooseslot/${item.id}/${item.name}`}
                     onClick={(evt) => this.bookFor(item)}
                     className="btn btn-lg btn-block btn-outline-primary"
                   >
                     Book Now
-                  </button>
+                  </Link>
                 </div>
               </div>
             );
