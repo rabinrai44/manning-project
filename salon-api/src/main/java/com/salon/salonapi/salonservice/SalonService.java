@@ -1,6 +1,7 @@
 package com.salon.salonapi.salonservice;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,10 @@ public class SalonService {
 	
 	public List<SalonServiceDetail> findAll() {
 		return salonServiceDetailRepository.findAll();
+	}
+	
+	public Optional<SalonServiceDetail> findById(Long id) {
+		return salonServiceDetailRepository.findById(id);
 	}
 	
 	

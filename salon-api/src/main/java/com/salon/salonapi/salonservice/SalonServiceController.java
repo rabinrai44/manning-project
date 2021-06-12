@@ -15,15 +15,15 @@ import javassist.NotFoundException;
 @RequestMapping("/api/services")
 public class SalonServiceController {
 
-	private final SalonServiceDetailRepository salonServiceDetailRepository;
+	private final SalonServiceDetailRepository salonService;
 
 	public SalonServiceController(SalonServiceDetailRepository salonServiceDetailRepository) {
-		this.salonServiceDetailRepository = salonServiceDetailRepository;
+		this.salonService = salonServiceDetailRepository;
 	}
 
 	@GetMapping("/retrieveAvailableSalonServices")
 	@ApiOperation(value = "RetrieveAvailableSalonServicesAPI")
 	public List<SalonServiceDetail> retrieveAvailableSalonServicesAPI() {		
-		return salonServiceDetailRepository.findAll();
+		return salonService.findAll();
 	}
 }

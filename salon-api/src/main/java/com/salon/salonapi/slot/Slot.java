@@ -14,15 +14,17 @@ import javax.persistence.ManyToOne;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.salon.salonapi.salonservice.SalonServiceDetail;
 
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Getter
-@Setter
-@EqualsAndHashCode
+@Data
+@NoArgsConstructor
+@ToString
 public class Slot {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,18 +38,9 @@ public class Slot {
 	private SalonServiceDetail selectedService;
 
 	String stylistName;
-
 	LocalDateTime slotFor;
-
-	private SlotStatus status;
-
 	LocalDateTime lockedAt;
 
-	public Slot() {
-	}
-
-}
-
-enum SlotStatus {
-	AVAILABLE, LOCKED, CONFIRMED, CANCELLED
+	private SlotStatus status;
+	
 }
