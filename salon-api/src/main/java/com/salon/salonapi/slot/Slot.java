@@ -40,6 +40,7 @@ public class Slot {
 	String stylistName;
 	LocalDateTime slotFor;
 	LocalDateTime lockedAt;
+	LocalDateTime confirmedAt;
 
 	private SlotStatus status;
 	

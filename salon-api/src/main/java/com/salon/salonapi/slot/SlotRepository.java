@@ -1,11 +1,10 @@
 package com.salon.salonapi.slot;
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import com.salon.salonapi.salonservice.SalonServiceDetail;
@@ -14,9 +13,8 @@ import com.salon.salonapi.salonservice.SalonServiceDetail;
 public interface SlotRepository extends JpaRepository<Slot, Long> {
 
 	List<Slot> findAllBySlotForGreaterThanEqualAndSlotForLessThanEqualAndAvailableServicesContainingAndStatus(
-			LocalDateTime startTime, 
-			LocalDateTime endTime, 
-			SalonServiceDetail serviceDetail, 
-			SlotStatus status);
+			LocalDateTime startTime, LocalDateTime endTime, SalonServiceDetail serviceDetail, SlotStatus status);
+
+	Optional<Slot> findByIdAndStatus(Long slotId, SlotStatus slotStatus);
 
 }

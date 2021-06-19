@@ -3,16 +3,20 @@ package com.salon.salonapi.slot;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 
 @RestController
 @RequestMapping("/api/slots")
+@CrossOrigin(origins = "http://localhost:3000")
+@Api(value = "Slot", tags = {"Slot"})
 public class SlotController {
 
 	SlotService slotService;

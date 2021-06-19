@@ -13,7 +13,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class SalonDetail {
+public class SalonDetails {
 
 	@Value("${salon.name}")
 	private String name;
@@ -33,16 +33,16 @@ public class SalonDetail {
 	@Value("${salon.phone}")
 	private String phone;
 	
-	public SalonDetail SalonDetail() {
-		SalonDetail salonDetail = new SalonDetail();
+	public SalonDetails clone() {
+		SalonDetails salonDetails = new SalonDetails();
 		
-		salonDetail.address=address;
-		salonDetail.city=city;
-		salonDetail.state=state;
-		salonDetail.zipcode=zipcode;
-		salonDetail.phone=phone;
-		salonDetail.name=name;
+		salonDetails.address=address;
+		salonDetails.city=city;
+		salonDetails.state=state;
+		salonDetails.zipcode=zipcode;
+		salonDetails.phone=phone;
+		salonDetails.name=name;
 		
-		return salonDetail;
+		return salonDetails;
 	}
 }
