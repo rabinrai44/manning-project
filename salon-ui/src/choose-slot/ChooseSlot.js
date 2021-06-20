@@ -1,5 +1,4 @@
 import { Component } from "react";
-import { Card } from "react-bootstrap";
 import { API_URL } from "../common/configuration";
 import {
   getFormattedTime,
@@ -155,6 +154,12 @@ class ChooseSlot extends Component {
 
   bookSlotFor(item) {
     const { serviceId, serviceName } = this.state;
+
+    console.log(serviceId + " " + serviceName);
+
+    this.props.history.push(
+      "/makepayment/" + item.id + "/" + serviceId + "/" + serviceName
+    );
   }
 }
 
