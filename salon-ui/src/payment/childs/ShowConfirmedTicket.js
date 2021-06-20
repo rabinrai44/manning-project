@@ -25,7 +25,7 @@ class ShowConfirmedTicket extends Component {
     console.log("Ticket response", ticketResponse);
     loadingIndicator.hide();
 
-    const ticketUrl = API_URL + "/tickets/" + ticketResponse.ticket.id;
+    const ticketUrl = API_URL + "tickets/" + ticketResponse.ticket.id;
     this.setState({
       processing: false,
       ticketUrl: ticketUrl,

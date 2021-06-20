@@ -12,6 +12,7 @@ import ChooseSlot from "./choose-slot/ChooseSlot";
 
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import VerifyUser from "./admin/VerifyUser";
 
 const stripePromise = loadStripe(
   "pk_test_51J1cX3GKCC6E2UZBj05S9wJ1HIeLwOdCG2e8RUXTBwNlT6lxwlcG0FqfPfae3ZPa94Quw7DGi1wA5x3Z3IdPRsyi00fRa03I3D"
@@ -40,6 +41,8 @@ function App() {
                   <PaymentContainer></PaymentContainer>
                 </Elements>
               </Route>
+
+              <Route path="/admin/verify-user" component={VerifyUser}></Route>
               <Route>
                 <ChooseService />
               </Route>
