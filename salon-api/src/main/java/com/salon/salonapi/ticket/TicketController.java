@@ -12,7 +12,6 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/api/tickets")
-@CrossOrigin(origins = "http://localhost:3000")
 public class TicketController {
 
 	TicketService ticketService;

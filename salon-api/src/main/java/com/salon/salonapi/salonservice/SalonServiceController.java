@@ -11,7 +11,6 @@ import io.swagger.annotations.ApiOperation;
 import javassist.NotFoundException;
 
 @RestController
-@CrossOrigin("http://localhost:3000")
 @RequestMapping("/api/services")
 public class SalonServiceController {
 

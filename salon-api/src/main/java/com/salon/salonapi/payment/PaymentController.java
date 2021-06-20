@@ -8,6 +8,9 @@ import com.salon.salonapi.payment.models.PaymentRequest;
 import com.salon.salonapi.ticket.Ticket;
 
 import io.swagger.annotations.ApiOperation;
+
+import javax.validation.Valid;
+
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +18,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/api/payments")
-@CrossOrigin(origins = "http://localhost:3000")
 public class PaymentController {
 	PaymentService paymentService;
 	SalonDetails salonDetails;
@@ -27,7 +29,7 @@ public class PaymentController {
 
 	@PostMapping("/initiate")
 	@ApiOperation(value = "InitialPayment")
-	public Payment initiatePayment(@RequestBody PaymentRequest paymentRequest) {
+	public Payment initiatePayment(@Valid @RequestBody PaymentRequest paymentRequest) {
 		try {
 			return paymentService.initiate(paymentRequest);
 		} catch (ConstraintViolationException e) {

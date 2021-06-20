@@ -15,7 +15,6 @@ import io.swagger.annotations.ApiParam;
 
 @RestController
 @RequestMapping("/api/slots")
-@CrossOrigin(origins = "http://localhost:3000")
 @Api(value = "Slot", tags = {"Slot"})
 public class SlotController {
 
